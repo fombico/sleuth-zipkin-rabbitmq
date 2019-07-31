@@ -1,0 +1,4 @@
+rootProject.name = "sleuth-zipkin-rabbitmq"
+
+include "app1"
+include "app2"

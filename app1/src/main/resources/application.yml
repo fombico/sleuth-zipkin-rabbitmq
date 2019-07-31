@@ -1,0 +1,10 @@
+logging.pattern.level: "%5p [${spring.zipkin.service.name:${spring.application.name:-}},%X{X-B3-TraceId:-},%X{X-B3-SpanId:-},%X{X-Span-Export:-}][%X{store-id:-}] "
+server.port: 8080
+spring:
+  application.name: app1
+  sleuth:
+    sampler.probability: 1.0
+    baggage-keys:
+      - "store-id"
+    log.slf4j.whitelisted-mdc-keys:
+      - "store-id"
