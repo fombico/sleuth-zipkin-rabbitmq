@@ -1,15 +1,15 @@
 package com.fombico.app1;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.messaging.support.MessageBuilder;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
+@Service
+@AllArgsConstructor
 @EnableBinding({CustomProcessor.class})
-@Component
 public class MessagingService {
 
-    @Autowired
     private CustomProcessor customProcessor;
 
     public void sendMessage(String message) {
