@@ -12,7 +12,7 @@ public class MessagingService {
 
     private CustomProcessor customProcessor;
 
-    public void sendMessage(String message) {
-        customProcessor.outputChannel().send(MessageBuilder.withPayload(message).build());
+    public void sendMessage(String payload) {
+        customProcessor.outputChannel().send(MessageBuilder.withPayload(payload).build());
     }
 }

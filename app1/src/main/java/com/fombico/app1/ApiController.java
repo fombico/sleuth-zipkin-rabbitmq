@@ -1,6 +1,5 @@
 package com.fombico.app1;
 
-import brave.propagation.ExtraFieldPropagation;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,11 +24,7 @@ public class ApiController {
 
     @PostMapping("/hello")
     public void createGreeting() {
-        ExtraFieldPropagation.set("store-id", "12345");
-        String storeId = ExtraFieldPropagation.get("store-id");
-
-        log.info("POST Hello " + storeId);
-
+        log.info("POST Hello");
         messagingService.sendMessage("Hello, world");
     }
 }
